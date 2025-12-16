@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman';
+    line-height: 1.6;
+    color: #333;
+}
+
+.fixa {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
