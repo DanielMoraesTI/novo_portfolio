@@ -10,8 +10,69 @@ body {
     color: #333;
 }
 
+.rosto {
+    width: 250px;
+    border-radius: 50%;
+}
+
 .fixa {
-    background-color: black;
+    background-color: #00509d;
     color: white;
     padding: 20px;
+    text-align: center;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.lista a {
+    text-decoration: none;
+    color: white;
+}
+
+.principal {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sobre {
+    list-style: none;
+    background-color: #1e96fc;
+}
+
+.sobre a {
+    text-decoration: none;
+    color: black;
+}
+
+.estudos {
+    background-color: #fcf300;
+}
+
+
+.extra {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    color: white;
+    flex-direction: row;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #4cc9f0;
 }

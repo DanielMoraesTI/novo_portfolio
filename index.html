@@ -9,19 +9,27 @@
 <body>
     <header class="fixa">
         <h1>Daniel Fernandes de Moraes</h1>
-        <p>Advogado com mais de 15 anos de experiência!</p>
-        <img src="imagens/rosto_sol.jpeg" alt="Foto do perfil do Daniel com óculos de sol a sorrir em um dia ensolarado" width="250">
-        <nav>
-            <ul>
-                <a href="">Sobre Mim</a>
-                <a href="experiencia.html">Experiências Profissionais</a>
-                <a href="">Projetos</a>
-                <a href="contactos.html">Contactos</a>
+        <p>Advogado com mais de 15 anos de experiência em processo de mudança de carreira!</p>
+        <img class="rosto" src="imagens/rosto_sol.jpeg" alt="Foto do perfil do Daniel com óculos de sol a sorrir em um dia ensolarado">
+        <nav class="barra">
+            <ul class="lista">
+                <li>
+                    <a href="">Sobre Mim</a>
+                </li>
+                <li>
+                    <a href="experiencia.html">Experiências Profissionais</a>
+                </li>
+                <li>
+                    <a href="">Projetos</a>
+                </li>
+                <li class="change">
+                    <a href="contactos.html">Contactos</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
+    <main class="principal">
+        <section class="sobre">
             <h2>
                 <h2>Sobre Mim</h2>
                 <p>Profissional da área jurídica com mais de 15 anos de experiência em contextos públicos e privados no Brasil e em Portugal, com forte actuação nas áreas administrativa, jurídica (contencioso e preventivo) e de atendimento institucional. Actualmente em processo de transição de carreira para o sector das tecnologias de informação, procuro consolidar um novo percurso profissional nas áreas de desenvolvimento, redes, dados ou suporte técnico. Com elevada capacidade analítica, pensamento lógico, organização e facilidade na aprendizagem de novas ferramentas digitais, pretendo aliar a experiência profissional adquirida à criação de soluções tecnológicas eficientes e inovadoras.</p>
@@ -33,7 +41,7 @@
                 <li>LinkedIn</li>
             </a>
         </section>
-        <section>
+        <section class="estudos">
             <h2>FORMAÇÃO ACADÊMICA</h2>
             <ol>
                 <li>Pós-graduação em Direito Processual Civil – Universidade Anhanguera (2010 - 2012)</li>
@@ -50,31 +58,37 @@
             </ol>
         </section>
         <section>
-            <h2>Meus Projetos</h2>
+            <h2>Principais Matérias Estudadas</h2>
             <figure>
-                <img src="https://placehold.co/400x300" alt="Imagem de projeto de estudo">
-                <figcaption>Projeto 1: Site sobre Video Game e Jogos</figcaption>
+                <img src="imagens/html.png" alt="Imagem de mesa de estudo de HMTL" width="400" height="300">
+                <figcaption>Metéria de Estudo HTML</figcaption>
             </figure>
             <figure>
-                <img src="https://placehold.co/400x300" alt="Imagem de projeto de estudo">
-                <figcaption>Projeto 2: Site de Compras</figcaption>
+                <img src="imagens/javascript.png" alt="Imagem de mesa de estudo de JavaScript" width="400" height="300">
+                <figcaption>Metéria de Estudo JavaScript</figcaption>
             </figure>
             <figure>
                 <img src="https://placehold.co/400x300" alt="Imagem de projeto de estudo">
                 <figcaption>Projeto 2: Site de Indicação de Filmes e Séries</figcaption>
             </figure>
         </section>
-        <section>
+        <section class="extra">
             <h2>Hobbies</h2>
-            <h3>Jogos eletrônicos</h3>
-            <video autoplay controls muted loop width="400">
-                <source src="media/d1631b50-c6a7-421a-a732-72d3bc033e6f.mp4">
-            </video>
+            <article class="">
+                <h3>Jogos eletrônicos</h3>
+                <video autoplay controls muted loop width="560" title="vídeo de gamplay de warzone, com vitória no final">
+                    <source src="media/d1631b50-c6a7-421a-a732-72d3bc033e6f.mp4" type="video/mp4">
+                </video>
+            </article>
+            <article class="">
+                <h3>Cozinhar</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CaF_rN98Uw0?si=beXH1FxTCS9hF4yI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe>
+            </article>
         </section>
     </main>
-    <footer>
+    <footer class="rodape">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.3127822777033!2d-9.15795532460163!3d38.7565294550047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932fc1d6c5e9b%3A0xe04b42461bdb164c!2sFaculdade%20de%20Ci%C3%AAncias%20da%20Universidade%20de%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1765550874617!5m2!1spt-PT!2spt" width="100%"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        © 2025 Desenvolvido por Daniel Moraes durante o aprendizado do Módulo Fundamentos de Programação Web/Programa UpSkill
+        <p>© 2025 Desenvolvido por Daniel Moraes durante o aprendizado do Módulo Fundamentos de Programação Web pelo Programa UpSkill</p>
     </footer>  
 </body>
 </html>
