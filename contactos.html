@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <a href="index.html">Página Inicial</a>
+    <nav class="barra">
+        <ul class="lista">
+            <li>
+                <a href="index.html">Página Inicial</a>
+            </li>
+            <li>
+                <a href="">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="experiencia.html">Experiências Profissionais</a>
+            </li>
+            <li>
+                <a href="">Projetos</a>
+            </li>
+            <li class="change">
+                <a href="contactos.html">Contactos</a>
+            </li>
         </ul>
     </nav>
     <ul>
@@ -19,24 +34,26 @@
             <li>Telefone</li>
         </a>
     </ul>
-    <form method="POST" onsubmit="enviarForm(event)">
-        <label for="nome">Nome:</label>
-        <input id="nome" type="text" placeholder="Digite seu nome" required>
-        <br>
-        <label for="email">E-mail:</label>
-        <input id="email" type="email" placeholder="Digite seu e-mail" required>
-        <br>
-        <label for="assunto">Assunto:</label>
-        <select id="assunto">
-            <option>Recrutamento</option>
-            <option>Freelance</option>
-            <option>Outro</option>
-        </select>
-        <br>
-        <label for="mensagem">Mensagem</label>
-        <textarea rows="5" minlength="10" placeholder="Escreve aqui a sua proposta" required></textarea>
-        <button type="submit">Enviar ✅</button>
-    </form>
+    <main>
+        <form method="POST" onsubmit="enviarForm(event)">
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text" placeholder="Digite seu nome" required>
+            <br>
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" placeholder="Digite seu e-mail" required>
+            <br>
+         <label for="assunto">Assunto:</label>
+            <select id="assunto">
+                <option>Recrutamento</option>
+                <option>Freelance</option>
+                <option>Outro</option>
+            </select>
+            <br>
+            <label for="mensagem">Mensagem</label>
+            <textarea rows="5" minlength="10" placeholder="Escreve aqui a sua proposta" required></textarea>
+            <button type="submit">Enviar ✅</button>
+        </form>
+    </main>
     <script>
         function enviarForm(event) {
             event.preventDefault();
@@ -44,4 +61,7 @@
         };
     </script>
 </body>
+    <footer class="rodape">
+        <p>© 2025 Desenvolvido por Daniel Moraes durante o aprendizado do Módulo Fundamentos de Programação Web pelo Programa UpSkill</p>
+    </footer> 
 </html>

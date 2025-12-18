@@ -3,6 +3,8 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     min-height: 100vh; /* Altura mínima = ecrã inteiro */
@@ -13,26 +15,33 @@ body {
 
 header {
     display: flex;
-    justify-content: space-around; /* Distribui os itens com espaços iguais ao redor de cada um (metade do espaço nas extremidades). */
+    justify-content: space-between; /* Distribui os itens com espaços iguais ao redor de cada um (metade do espaço nas extremidades). */
     align-items: center; /* Alinha verticalmente ao centro */
-    padding: 20px;
+    padding: 10px;
     color: white;
+}
+
+section {
+        padding: 20px;
 }
 
 #sobre-inicial {
     display: flex;
     align-items: center; /* Centra a imagem com o texto */
-    gap: 50px; /* Espaço generoso no meio */
-    padding: 50px 0;
+    justify-content: space-evenly;
+    gap: 100px; /* Espaço generoso no meio */
 }
 
 .rosto {
-    width: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
     border-radius: 50%;
 }
 
 .fixa {
-    background-color: #00509d;
+    background-color: #393E46;
     color: white;
     padding: 20px;
     text-align: center;
@@ -40,12 +49,12 @@ header {
 
 .barra {
     display: flex;
-    flex-direction: column;
-
+    background-color: #00509d;
 }
 
 main {
     flex-grow: 1; /* O segredo! */
+    flex: 1;
 }
 
 .lista {
@@ -57,12 +66,11 @@ main {
 
 .lista a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .principal {
     margin: 0 auto;
-    padding: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -83,6 +91,11 @@ main {
     max-width: 100%;
 }
 
+.materias {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .extra {
     display: flex;
