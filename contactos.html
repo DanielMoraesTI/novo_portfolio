@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="fixa">
+        <section id="sobre-inicial">
+            <div>
+                <img class="rosto" src="imagens/rosto_sol.jpeg" alt="Foto do perfil do Daniel com óculos de sol a sorrir em um dia ensolarado">
+                <h1>Daniel Fernandes de Moraes</h1>
+            </div>
+            <div>
+                <p>Advogado com mais de 15 anos de experiência em processo de mudança de carreira!</p>
+            </div>
+        </section>
+    </header>
     <nav class="barra">
         <ul class="lista">
             <li>
@@ -26,14 +37,6 @@
             </li>
         </ul>
     </nav>
-    <ul>
-        <a href="mailto:adv.danielfm@gmail.com">
-            <li>E-mail</li>
-        </a>
-        <a href="tel:+351912334535">
-            <li>Telefone</li>
-        </a>
-    </ul>
     <main>
         <form method="POST" onsubmit="enviarForm(event)">
             <label for="nome">Nome:</label>
@@ -42,22 +45,22 @@
             <label for="email">E-mail:</label>
             <input id="email" type="email" placeholder="Digite seu e-mail" required>
             <br>
-         <label for="assunto">Assunto:</label>
+         <label for="assunto">Qual matéria tem dúvida:</label>
             <select id="assunto">
-                <option>Recrutamento</option>
-                <option>Freelance</option>
-                <option>Outro</option>
+                <option>JavaScript</option>
+                <option>HTML</option>
+                <option>CSS</option>
             </select>
             <br>
             <label for="mensagem">Mensagem</label>
-            <textarea rows="5" minlength="10" placeholder="Escreve aqui a sua proposta" required></textarea>
+            <textarea rows="5" minlength="10" placeholder="Escreve aqui a sua dúvida" required></textarea>
             <button type="submit">Enviar ✅</button>
         </form>
     </main>
     <script>
         function enviarForm(event) {
             event.preventDefault();
-            alert("Obrigado pelo contacto! Responderei em breve.");
+            alert("Obrigado pelo contacto! Responderei a sua dúvida sobre a matérias escolhida em breve.");
         };
     </script>
 </body>
