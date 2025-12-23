@@ -121,6 +121,10 @@ main {
     border-radius: 20px;
 }
 
+.botoes {
+    list-style: none;
+}
+
 .botoes a {
     list-style: none;
     text-decoration: none;
