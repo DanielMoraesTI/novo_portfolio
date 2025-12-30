@@ -85,6 +85,22 @@ section {
     text-align: center;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white; /* Cor do traço do hambúrguer */
+    position: relative;
+}
+
 .barra {
     display: flex;
     background-color: #00509d;
@@ -255,14 +271,53 @@ textarea {
         padding: 0 10px;
         text-align: center;
     }
-    .lista {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-    }
+
     .barra {
+        justify-content: flex-start;
+        padding: 0 20px;
+        position: relative;
         max-height: none;
         height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hamburger {
+        color: white; /* Cor do ícone ☰ */
+        font-size: 30px; /* Tamanho do ícone */
+        line-height: 1;
+        display: block;
+    }
+
+    .lista {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #00509d;
+        gap: 0;
+        z-index: 1000;
+    }
+
+    .lista li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .lista a {
+        display: block;
+        padding: 15px;
+        color: white;
+    }
+
+    .lista.active {
+        display: flex;
     }
 
     .contacto-grid {
