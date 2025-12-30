@@ -10,7 +10,6 @@ menuToggle.addEventListener('click', () => {
     lista.classList.toggle('active');
 });
 
-    // Opcional: Fecha o menu ao clicar num link
 document.querySelectorAll('.lista a').forEach(link => {
     link.addEventListener('click', () => {
         lista.classList.remove('active');

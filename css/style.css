@@ -285,13 +285,6 @@ textarea {
         z-index: 1001;
     }
 
-    .hamburger {
-        color: white; /* Cor do ícone ☰ */
-        font-size: 30px; /* Tamanho do ícone */
-        line-height: 1;
-        display: block;
-    }
-
     .lista {
         display: none;
         flex-direction: column;
