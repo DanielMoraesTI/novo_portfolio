@@ -211,8 +211,8 @@ video, iframe {
 }
 
 .nav-icons {
-    background-color: rgba(0, 255, 255, 0.549);
-    text-align: end;
+    background-color: #1F2933;
+    text-align: center;
 }
 .nav-icons img {
     margin: 10px 5px 0px 0px;
