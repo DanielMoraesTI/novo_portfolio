@@ -214,6 +214,14 @@ video, iframe {
     background-color: #1F2933;
     text-align: center;
 }
+
+.nav-icons a, 
+.nav-icons a:visited,
+.nav-icons a:hover,
+.nav-icons a:active {
+    text-decoration: none;
+}
+
 .nav-icons img {
     margin: 10px 5px 0px 0px;
     width: 20px;
