@@ -7,11 +7,14 @@ const menuToggle = document.querySelector('.menu-toggle');
 const lista = document.querySelector('.lista');
 
 menuToggle.addEventListener('click', () => {
-    lista.classList.toggle('active');
+    const isOpen = lista.classList.toggle('active');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
 });
 
 document.querySelectorAll('.lista a').forEach(link => {
     link.addEventListener('click', () => {
         lista.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     });
 });

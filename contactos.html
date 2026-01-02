@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js" defer></script>
     <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -26,10 +25,10 @@
         </section>
     </header>
     <nav class="barra">
-        <button class="menu-toggle" aria-label="Abrir menu">
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
             ☰
         </button>
-        <ul class="lista">
+        <ul class="lista" id="menu-principal">
             <li>
                 <a href="index.html">Página Inicial</a>
             </li>
@@ -67,7 +66,7 @@
                     </select>
                     <br>
                     <label for="mensagem">Mensagem</label>
-                    <textarea rows="5" minlength="10" placeholder="Escreve aqui sua dúvida" required></textarea>
+                    <textarea id="mensagem" name="mensagem" rows="5" minlength="10" placeholder="Escreve aqui sua dúvida" required></textarea>
                     <button type="submit">Enviar ✅</button>
                 </form>
             </section>
@@ -85,8 +84,8 @@
             <a href="mailto: adv.danielmf@gmail.com">
                 <img src="assets/icons/mail-svgrepo-com.svg" alt="Enviar e-mail">
             </a>
-            <a href="https://wa.me/" target="_blank">
-                <img src="assets/icons/whatsapp-svgrepo-com.svg" alt="Contacto via WhatsApp">
+            <a href="https://wa.me/" target="_blank" aria-label="Entrar em contacto via WhatsApp">
+                <img src="assets/icons/whatsapp-svgrepo-com.svg">
             </a>
         </nav>
         <p>© 2025 | Projeto realizado por Daniel Moraes - Curso Frontend, Programa UPskill, Faculdade de Ciências da Universidade de Lisboa</p>
