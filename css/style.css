@@ -372,7 +372,7 @@ textarea {
         color: white;
     }
 
-    .barra.lista.active {
+    .barra .lista.active {
         display: flex !important;
     }
 
