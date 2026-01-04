@@ -83,6 +83,7 @@ section {
 .fixa {
     display: flex;
     background-color: #1F2933;
+    flex-direction: column;
     color: #FFFFFF;
     padding: 10px 20px;
     text-align: center;
@@ -96,6 +97,7 @@ section {
     border: none;
     cursor: pointer;
     padding: 10px;
+    font-size: 2rem;
 }
 
 a:focus {
@@ -294,27 +296,33 @@ textarea {
     header, nav, main, footer {
     width: 100%;
     }
-    .header {
+
+    .fixa {
         flex-direction: column;
         max-height: none;      
         height: auto;
         gap: 1rem;
         text-align: center;
+        align-items: stretch;
     }
+
     #sobre-inicial {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+
     .perfil {
         align-items: center;
     }
+
     .rosto {
         width: 100%;
         max-width: 200px;
         height: auto;
         object-fit: cover;
     }
+
     .descricao {
         max-width: 100%;
         padding: 0 10px;
@@ -323,15 +331,21 @@ textarea {
 
     .barra {
         justify-content: flex-start;
-        padding: 0 20px;
+        padding: 0 1rem;
         position: relative;
         max-height: none;
         height: auto;
+        z-index: 1001;
     }
 
     .menu-toggle {
         display: block;
-        z-index: 1001;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1002;
     }
 
     .lista {
@@ -358,8 +372,8 @@ textarea {
         color: white;
     }
 
-    .lista.active {
-        display: flex;
+    .barra.lista.active {
+        display: flex !important;
     }
 
     .contacto-grid {
