@@ -280,6 +280,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
+    header, nav, main, footer {
+    width: 100%;
+    max-width: 1200px;
+    }
     .header {
         flex-direction: column;
         max-height: none;      
