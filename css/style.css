@@ -331,15 +331,17 @@ textarea {
 
     .barra {
         justify-content: flex-start;
+        flex-direction: column;
         padding: 0 1rem;
         position: relative;
-        max-height: none;
         height: auto;
+        max-height: none;
         z-index: 1001;
     }
 
     .menu-toggle {
         display: block;
+        text-align: start;
         font-size: 2rem;
         background: none;
         border: none;
@@ -351,8 +353,8 @@ textarea {
     .lista {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
+        position: relative;
+        top: 0;
         left: 0;
         width: 100%;
         background-color: #00509d;
