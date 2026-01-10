@@ -278,9 +278,22 @@ form {
     align-items: flex-start;
 }
 
+form, input, #assunto, #mensagem {
+    border-radius: 5px;
+}
+
 textarea {
     width: 100%;
     max-width: 500px;
+}
+
+#send {
+    border-radius: 5px;
+}
+
+#send:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .rodape {
