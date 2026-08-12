@@ -4,6 +4,8 @@ import {
   Award,
   ArrowRight,
   Briefcase,
+  Building2,
+  CheckCircle2,
   GraduationCap,
   MapPin,
   Quote,
@@ -22,12 +24,24 @@ import { Reveal } from "@/components/reveal";
 import {
   academicEducation,
   certifications,
+  completedProgram,
+  currentActivity,
   highlights,
   hobbies,
   profile,
   studyTopics,
   techEducation,
 } from "@/lib/data";
+
+const formacaoTecnologia = [
+  {
+    title: completedProgram.title,
+    place: completedProgram.place,
+    period: completedProgram.period,
+    completed: true,
+  },
+  ...techEducation,
+];
 
 export default function Home() {
   return (
@@ -137,7 +151,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2">
           <Reveal delay={0.05}>
             <h3 className="mb-4 text-sm font-semibold tracking-wide text-muted-foreground uppercase">
-              Académica
+              Acadêmica
             </h3>
             <ol className="space-y-4">
               {academicEducation.map((item) => (
@@ -162,38 +176,22 @@ export default function Home() {
               Tecnologia e Cursos Complementares
             </h3>
             <ol className="space-y-4">
-              {techEducation.map((item) => (
+              {formacaoTecnologia.map((item) => (
                 <li key={item.title}>
-                  <Card className={item.current ? "ring-2 ring-accent" : undefined}>
+                  <Card>
                     <CardHeader>
                       <CardTitle>{item.title}</CardTitle>
                       <CardDescription>{item.place}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-wrap items-center gap-2">
-                      {item.current ? (
-                        <>
-                          <Badge className="gap-1.5 bg-success text-success-foreground">
-                            <span className="relative flex size-1.5">
-                              <span className="absolute inline-flex size-full animate-ping rounded-full bg-success-foreground/70" />
-                              <span className="relative inline-flex size-1.5 rounded-full bg-success-foreground" />
-                            </span>
-                            A cursar agora
-                          </Badge>
-                          <Badge variant="outline">{item.period}</Badge>
-                        </>
-                      ) : (
-                        item.period && <Badge variant="outline">{item.period}</Badge>
+                      {"completed" in item && item.completed && (
+                        <Badge className="gap-1 bg-success text-success-foreground">
+                          <CheckCircle2 className="size-3" />
+                          Concluído
+                        </Badge>
                       )}
+                      <Badge variant="outline">{item.period}</Badge>
                     </CardContent>
-                    {item.modules && (
-                      <CardContent className="flex flex-wrap gap-1.5 pt-0">
-                        {item.modules.map((module) => (
-                          <Badge key={module} variant="secondary" className="h-auto whitespace-normal rounded-md px-2 py-1 text-left font-normal">
-                            {module}
-                          </Badge>
-                        ))}
-                      </CardContent>
-                    )}
                   </Card>
                 </li>
               ))}
@@ -203,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* CERTIFICAÇÕES */}
-      <section className="border-t border-border/60 bg-card/40">
+      <section className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal className="mb-10 flex items-center gap-2">
             <Award className="size-6 text-primary" />
@@ -234,43 +232,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MATÉRIAS DE ESTUDO */}
-      <section className="border-t border-border/60">
+      {/* A ACONTECER AGORA */}
+      <section className="border-t border-border/60 bg-card/40">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <Reveal className="mb-10 text-center">
-            <h2 className="font-display text-3xl font-bold tracking-tight">
-              Principais matérias estudadas
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              As três colunas de qualquer projeto web moderno.
-            </p>
-          </Reveal>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {studyTopics.map((topic, i) => (
-              <Reveal key={topic.title} delay={i * 0.08}>
-                <Link href={topic.href} target="_blank" rel="noopener noreferrer" className="group block h-full">
-                  <Card className="h-full overflow-hidden transition-all group-hover:-translate-y-1 group-hover:shadow-xl">
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image
-                        src={topic.image}
-                        alt={`Ilustração da matéria ${topic.title}`}
-                        fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between text-lg">
-                        {topic.title}
-                        <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
-                      </CardTitle>
-                      <CardDescription>{topic.description}</CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              </Reveal>
-            ))}
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <Badge className="gap-1.5 bg-success text-success-foreground">
+                <span className="relative flex size-1.5">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-success-foreground/70" />
+                  <span className="relative inline-flex size-1.5 rounded-full bg-success-foreground" />
+                </span>
+                {currentActivity.kind} em curso
+              </Badge>
+              <h2 className="font-display mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                {currentActivity.title}
+              </h2>
+              <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-foreground/80">
+                <Building2 className="size-4 text-primary" />
+                {currentActivity.place}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">{currentActivity.period}</p>
+              <p className="mt-4 text-muted-foreground text-pretty">
+                {currentActivity.description}
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <CheckCircle2 className="size-5 text-success" />
+                    {completedProgram.title}
+                  </CardTitle>
+                  <CardDescription>
+                    {completedProgram.place} · {completedProgram.period}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ol className="space-y-2.5">
+                    {completedProgram.modules.map((module, i) => (
+                      <li key={module} className="flex items-start gap-2.5 text-sm">
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" />
+                        <span>
+                          <span className="text-muted-foreground">M{i + 1} · </span>
+                          {module}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </CardContent>
+              </Card>
+            </Reveal>
           </div>
+
+          <Reveal
+            delay={0.15}
+            className="mt-14 flex flex-wrap items-center justify-center gap-3 border-t border-border/60 pt-8"
+          >
+            <span className="text-sm text-muted-foreground">Bases sólidas:</span>
+            {studyTopics.map((topic) => (
+              <Link
+                key={topic.title}
+                href={topic.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-border/60 bg-background px-3 py-1.5 text-sm font-medium transition hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+              >
+                {topic.title}
+              </Link>
+            ))}
+          </Reveal>
         </div>
       </section>
 
@@ -283,7 +314,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal className="mb-10 text-center">
             <h2 className="font-display text-3xl font-bold tracking-tight">
-              Fora do código &amp; dos tribunais
+              Fora do código e dos tribunais
             </h2>
             <p className="mt-2 text-slate-300">Também sou gente — eis os meus hobbies.</p>
           </Reveal>

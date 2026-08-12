@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircleHeart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
@@ -18,8 +17,7 @@ export default function ContactoPage() {
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <Reveal>
-          <MessageCircleHeart className="size-8 text-primary" />
-          <h1 className="font-display mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Quer falar comigo?
           </h1>
           <p className="mt-4 text-muted-foreground text-pretty">

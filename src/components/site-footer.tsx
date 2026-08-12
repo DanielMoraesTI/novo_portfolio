@@ -22,7 +22,7 @@ export function SiteFooter() {
           ))}
         </nav>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} · Feito com Next.js, React &amp; café ☕ por Daniel Moraes
+          © {new Date().getFullYear()} · Feito com Next.js, React e café ☕ por Daniel Moraes
           <br />
           Curso Frontend, Programa UPskill — Faculdade de Ciências da Universidade de Lisboa
         </p>

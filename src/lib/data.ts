@@ -42,22 +42,6 @@ export const academicEducation = [
 
 export const techEducation = [
   {
-    title: "Frontend JavaScript + IA",
-    place: "Programa UPskill — Digital Skills & Jobs · Faculdade de Ciências da Universidade de Lisboa",
-    period: "Nov 2025 — Jul 2026",
-    current: true,
-    modules: [
-      "M1 · Fundamentos da Computação e Introdução à Programação",
-      "M2 · Fundamentos de Programação Web",
-      "M3 · JavaScript + TypeScript",
-      "M4 · Introdução a Bases de Dados",
-      "M5 · Backend: Node.js e APIs",
-      "M6 · Frontend: React & Next.js",
-      "M7 · Introdução a GenAI & GenAI no Browser",
-      "M8 · Projeto Final",
-    ],
-  },
-  {
     title: "CS50 — Introdução à Ciência da Computação (Harvard)",
     place: "Fundação Estudar",
     period: "Dez 2023",
@@ -73,6 +57,40 @@ export const techEducation = [
     period: "2023",
   },
 ];
+
+// O que está a acontecer agora — em destaque na homepage.
+export const currentActivity = {
+  kind: "Estágio",
+  title: "Estágio em Desenvolvimento Frontend",
+  place: "Faculdade de Ciências da Universidade de Lisboa",
+  period: "13 Jul 2026 — 13 Out 2026",
+  description:
+    "Depois de concluir a parte teórica do Programa UPskill, a pôr tudo em prática: 3 meses de estágio na área de TI Frontend, em contexto real de equipa técnica.",
+};
+
+// Programa concluído que originou o estágio acima.
+export const completedProgram = {
+  title: "Frontend JavaScript + IA",
+  place: "Programa UPskill — Digital Skills & Jobs · Faculdade de Ciências da Universidade de Lisboa",
+  period: "Nov 2025 — Jul 2026",
+  modules: [
+    "Fundamentos da Computação e Introdução à Programação",
+    "Fundamentos de Programação Web",
+    "JavaScript + TypeScript",
+    "Introdução a Bases de Dados",
+    "Backend: Node.js e APIs",
+    "Frontend: React & Next.js",
+    "Introdução a GenAI & GenAI no Browser",
+    "Projeto Final",
+  ],
+};
+
+// Próximo curso a começar — adicionar dados quando arrancar.
+export const upcomingCourse = {
+  title: "Carreira",
+  place: "Alura",
+  status: "A começar em breve",
+};
 
 export type CertificationGroup = {
   title: string;
