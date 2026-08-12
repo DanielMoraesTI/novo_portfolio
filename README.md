@@ -1,96 +1,66 @@
+# Daniel Moraes — Portfólio
 
-# Portfólio – Daniel Moraes
+Portfólio pessoal de Daniel Moraes: advogado com mais de 15 anos de
+experiência, em transição de carreira para a área de tecnologia.
+Construído com **Next.js (App Router)**, **React**, **TypeScript**,
+**Tailwind CSS v4**, **shadcn/ui** (Base UI), **lucide-react** e
+**motion**.
 
-Este projeto consiste num site como portfólio, desenvolvido com HTML, CSS e JavaScript, com o objetivo de apresentar o percurso profissional, formação académica, estudos atuais, hobbies e formas de contacto.
+## Stack
 
-O projeto foi desenvolvido no âmbito do Curso Frontend do Programa UPskill, da Faculdade de Ciências da Universidade de Lisboa, respeitando boas práticas de estruturação, acessibilidade e responsividade.
-## Autor
+- [Next.js 16](https://nextjs.org/) — App Router, Turbopack
+- [React 19](https://react.dev/) + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/) (base-ui primitives)
+- [lucide-react](https://lucide.dev/) — ícones
+- [motion](https://motion.dev/) — animações
+- [next-themes](https://github.com/pacocoursey/next-themes) — modo claro/escuro
+- [sonner](https://sonner.emilkowal.ski/) — notificações
 
-- [Daniel Moraes](https://github.com/DanielMoraesTI)
+## Estrutura
 
+```
+src/
+  app/
+    page.tsx            → Início (hero, sobre, formação, hobbies)
+    experiencia/         → Experiências profissionais (timeline)
+    projetos/             → Projetos (em construção)
+    contacto/             → Formulário e canais de contacto
+    layout.tsx           → Layout raiz (header, footer, tema, fontes)
+    globals.css           → Tokens de design / tema
+  components/
+    ui/                    → Componentes shadcn/ui
+    site-header.tsx        → Cabeçalho + navegação (com menu mobile)
+    site-footer.tsx        → Rodapé + redes sociais
+    contact-form.tsx       → Formulário de contacto
+    reveal.tsx              → Wrapper de animação de entrada
+  lib/
+    data.ts                 → Todo o conteúdo do site (fácil de editar)
+public/
+  assets/                    → Imagens, ícones e vídeo originais
+```
 
-## Tecnologias Utilizadas
+Todo o conteúdo textual (experiências, formação, links) está centralizado
+em [`src/lib/data.ts`](src/lib/data.ts) — basta editar esse ficheiro para
+atualizar o site.
 
-HTML5 – Estrutura semântica do conteúdo
+## Desenvolvimento
 
-CSS3 – Layout, responsividade e design visual
+```bash
+npm install
+npm run dev       # http://localhost:3000
+npm run build      # build de produção
+npm run start       # serve o build de produção
+npm run lint          # eslint
+```
 
-JavaScript – Interatividade (menu responsivo e formulário)
+## Notas
 
-Media Queries – Adaptação a dispositivos móveis
+- O ícone de WhatsApp é mantido por identidade visual, mas sem número de
+  telefone associado — aponta para a página de contacto.
+- O vídeo em `public/assets/videos` é o original do projeto estático.
 
-Atributos ARIA – Melhoria de acessibilidade
-## Passos para Executar a Página
-Fazer o download ou clone do repositório:
+---
 
-git clone https://github.com/DanielMoraesTI/novo_portfolio.git
-
-Abrir a pasta do projeto.
-
-Executar o ficheiro principal:
-
-Abrir o ficheiro index.html diretamente no navegador
-
-ou
-
-Utilizar uma extensão como Live Server no Visual Studio Code.
-
-
-## Principais decisões tomadas e justificação da adequação
-
-1. Estrutura Semântica em HTML
-
-Foram utilizados elementos como <header>, <nav>, <main>, <section> e <footer>.
-
-2. Layout Responsivo com Flexbox
-
-3. Menu Responsivo com JavaScript
-
-Implementação de um menu “hambúrguer” para dispositivos móveis
-
-4. Separação de Responsabilidades
-
-O projeto está organizado em pastas:
-
-css/ → estilos
-
-js/ → scripts
-
-assets/ → imagens, vídeos e ícones
-
-Esta organização facilita:
-
-Manutenção
-
-Escalabilidade
-
-Leitura do projeto por terceiros
-
-5. Formulário com Validações Básicas
-
-O formulário de contacto inclui:
-
-Campos obrigatórios
-
-Tipos adequados (email, text)
-
-Feedback ao utilizador via alert()
-
-Simplicidade e clareza para um projeto frontend introdutório.
-
-6. Acessibilidade
-
-Foram consideradas boas práticas como:
-
-Texto alternativo em imagens (alt)
-
-Foco visível em links
-
-Uso de atributos ARIA
-
-Navegação funcional por teclado
-
-## 🔗 Links
-https://github.com/DanielMoraesTI/novo_portfolio.git
-https://danielmoraesti.github.io/novo_portfolio/
-
+© 2025–2026 Daniel Moraes · Curso Frontend, Programa UPskill — Faculdade
+de Ciências da Universidade de Lisboa.
