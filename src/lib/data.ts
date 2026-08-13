@@ -97,6 +97,7 @@ export type CertificationGroup = {
   provider: string;
   count: number;
   description: string;
+  courses: { title: string; date: string }[];
 };
 
 export const certifications: CertificationGroup[] = [
@@ -106,6 +107,14 @@ export const certifications: CertificationGroup[] = [
     count: 6,
     description:
       "Do jogo Pong à criação de páginas dinâmicas — bases sólidas de lógica e JS.",
+    courses: [
+      { title: "Lógica de programação: explore funções e listas", date: "Mai 2026" },
+      { title: "Lógica de programação: mergulhe em programação com JavaScript", date: "Abr 2024" },
+      { title: "Lógica de programação: laços e listas com JavaScript", date: "Fev 2023" },
+      { title: "Lógica de programação: comece em lógica com o jogo Pong e JavaScript", date: "Fev 2023" },
+      { title: "JavaScript para Web: crie páginas dinâmicas", date: "Mai 2023" },
+      { title: "Formação: a partir do zero, iniciante em programação", date: "Mai 2023" },
+    ],
   },
   {
     title: "HTML & CSS",
@@ -113,30 +122,62 @@ export const certifications: CertificationGroup[] = [
     count: 5,
     description:
       "Estrutura, Flexbox, responsividade e publicação de projetos do zero.",
+    courses: [
+      { title: "HTML e CSS: praticando HTML/CSS", date: "Out 2023" },
+      { title: "HTML e CSS: trabalhando com responsividade e publicação de projetos", date: "Mai 2023" },
+      { title: "HTML e CSS: cabeçalho, footer e variáveis CSS", date: "Abr 2023" },
+      { title: "HTML e CSS: classes, posicionamento e Flexbox", date: "Mar 2023" },
+      { title: "HTML e CSS: ambientes de desenvolvimento, estrutura de arquivos e tags", date: "Mar 2023" },
+    ],
   },
   {
     title: "Imersões Práticas",
     provider: "Alura",
     count: 5,
     description: "Front-end, Front-end com IA, Back-end, Dados com Python e IA.",
+    courses: [
+      { title: "Imersão IA", date: "Jun 2026" },
+      { title: "Imersão Front-End com IA", date: "Jun 2026" },
+      { title: "Imersão Dados com Python", date: "Ago 2025" },
+      { title: "Imersão Dev Back-End", date: "Jan 2025" },
+      { title: "Imersão Front-End", date: "Fev 2024" },
+    ],
   },
   {
     title: "Modelagem de Dados",
     provider: "Alura",
     count: 4,
     description: "Entidades, atributos, relacionamentos e modelo lógico.",
+    courses: [
+      { title: "Trilha: modelagem de dados", date: "Mai 2026" },
+      { title: "Modelagem de dados", date: "Abr 2026" },
+      { title: "Modelagem de dados: desenvolvendo o modelo lógico", date: "Mar 2026" },
+      { title: "Modelagem de dados: identificando entidades, atributos, relacionamentos", date: "Mar 2026" },
+    ],
   },
   {
     title: "PHP",
     provider: "Alura",
     count: 4,
     description: "Orientação a objetos, interfaces, namespaces e traits.",
+    courses: [
+      { title: "PHP: use interfaces, namespaces, traits e exceções", date: "Jul 2026" },
+      { title: "PHP: conheça a programação orientada a objetos", date: "Jul 2026" },
+      { title: "PHP: evolua seu conhecimento e organize seu código", date: "Jul 2026" },
+      { title: "PHP: criando sua aplicação", date: "Jul 2026" },
+    ],
   },
   {
     title: "Fundamentos & Ferramentas",
     provider: "Alura",
     count: 4,
     description: "Git & GitHub, Linux, arquitetura de computadores e aprender a aprender.",
+    courses: [
+      { title: "Git e GitHub: repositório, commit e versões", date: "Mai 2023" },
+      { title: "Linux I: conhecendo e utilizando o terminal", date: "Mar 2023" },
+      { title: "Arquitetura de computadores: por trás de como seu programa funciona", date: "Mar 2023" },
+      { title: "Aprender a aprender: técnicas para seu autodesenvolvimento", date: "Out 2023" },
+    ],
   },
 ];
 
@@ -163,7 +204,7 @@ export const studyTopics = [
 
 export const hobbies = [
   {
-    title: "Jogos eletrónicos",
+    title: "Jogos eletrônicos",
     description: "A estratégia de uma boa partida também treina a mente para resolver problemas.",
     type: "video" as const,
     src: "/assets/videos/d1631b50-c6a7-421a-a732-72d3bc033e6f.mp4",

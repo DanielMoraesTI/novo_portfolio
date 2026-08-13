@@ -16,11 +16,9 @@ import {
 } from "@/components/ui/select";
 
 const motivos = [
-  "Dúvidas de JavaScript",
-  "Dúvidas de HTML",
-  "Dúvidas de CSS",
   "Dúvidas sobre transição de carreira",
   "Oportunidade profissional",
+  "Imigração e seus desafios",
   "Outro assunto",
 ];
 

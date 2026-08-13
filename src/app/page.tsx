@@ -7,6 +7,7 @@ import {
   Building2,
   CheckCircle2,
   GraduationCap,
+  Heart,
   MapPin,
   Quote,
   Sparkle,
@@ -21,6 +22,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
+import { CertificationsGrid } from "@/components/certifications-grid";
 import {
   academicEducation,
   certifications,
@@ -209,26 +211,7 @@ export default function Home() {
               Cursos e Certificações
             </h2>
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert, i) => (
-              <Reveal key={cert.title} delay={i * 0.05}>
-                <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="flex items-start justify-between gap-2">
-                      {cert.title}
-                      <Badge className="shrink-0 bg-accent text-accent-foreground">
-                        {cert.count} cursos
-                      </Badge>
-                    </CardTitle>
-                    <CardDescription>{cert.provider}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{cert.description}</p>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
+          <CertificationsGrid certifications={certifications} />
         </div>
       </section>
 
@@ -306,22 +289,25 @@ export default function Home() {
       </section>
 
       {/* HOBBIES */}
-      <section id="hobbies" className="relative overflow-hidden bg-slate-950 text-slate-50">
+      <section id="hobbies" className="relative overflow-hidden border-t border-border/60">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_20%,color-mix(in_oklch,var(--primary),transparent_70%),transparent_55%)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_15%,color-mix(in_oklch,var(--primary),transparent_90%),transparent_55%),radial-gradient(circle_at_85%_85%,color-mix(in_oklch,var(--accent),transparent_88%),transparent_55%)]"
         />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <Reveal className="mb-10 text-center">
+          <Reveal className="mb-10 flex items-center justify-center gap-2 text-center">
+            <Heart className="size-6 text-primary" />
             <h2 className="font-display text-3xl font-bold tracking-tight">
               Fora do código e dos tribunais
             </h2>
-            <p className="mt-2 text-slate-300">Também sou gente — eis os meus hobbies.</p>
           </Reveal>
+          <p className="-mt-8 mb-10 text-center text-muted-foreground">
+            Também sou gente — eis os meus hobbies.
+          </p>
           <div className="grid gap-8 md:grid-cols-2">
             {hobbies.map((hobby, i) => (
               <Reveal key={hobby.title} delay={i * 0.1}>
-                <div className="overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10">
+                <Card className="gap-0 overflow-hidden py-0">
                   <div className="aspect-video w-full">
                     {hobby.type === "video" ? (
                       <video
@@ -345,14 +331,14 @@ export default function Home() {
                       />
                     )}
                   </div>
-                  <div className="p-5">
+                  <CardContent className="p-5">
                     <div className="flex items-center gap-2">
                       <Briefcase className="size-4 text-accent" />
-                      <h3 className="font-display font-semibold">{hobby.title}</h3>
+                      <h3 className="font-semibold">{hobby.title}</h3>
                     </div>
-                    <p className="mt-1 text-sm text-slate-300">{hobby.description}</p>
-                  </div>
-                </div>
+                    <p className="mt-1 text-sm text-muted-foreground">{hobby.description}</p>
+                  </CardContent>
+                </Card>
               </Reveal>
             ))}
           </div>
