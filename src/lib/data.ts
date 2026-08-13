@@ -42,7 +42,7 @@ export const academicEducation = [
 
 export const techEducation = [
   {
-    title: "CS50 — Introdução à Ciência da Computação (Harvard)",
+    title: "CC50: Introdução à Ciência da Computação - O Curso de Harvard",
     place: "Fundação Estudar",
     period: "Dez 2023",
   },
