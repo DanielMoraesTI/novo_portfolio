@@ -3,7 +3,7 @@ export const profile = {
   role: "Advogado em transição para Tecnologia",
   tagline:
     "15+ anos a resolver problemas com as leis. Agora a resolvê-los com código.",
-  bio: "Profissional da área jurídica com mais de 15 anos de experiência em contextos públicos e privados, no Brasil e em Portugal, com forte atuação nas áreas administrativa, jurídica (contencioso e preventivo) e de atendimento institucional. Atualmente em transição de carreira para o setor das tecnologias de informação, a consolidar um novo percurso em desenvolvimento, redes, dados ou suporte técnico — a aliar a experiência profissional adquirida à criação de soluções tecnológicas eficientes e inovadoras.",
+  bio: "Profissional da área jurídica com mais de 15 anos de experiência em contextos públicos e privados, no Brasil e em Portugal, com forte atuação nas áreas administrativa, jurídica (contencioso e preventivo) e de atendimento institucional. Atualmente em transição de carreira para a área de Tecnologia da Informação, com foco em desenvolvimento Frontend, unindo a sólida bagagem analítica e profissional à criação de interfaces eficientes, intuitivas e centradas no usuário.",
   quote: "Não sou Ateniense nem Grego, mas sim um cidadão do mundo.",
   quoteAuthor: "Sócrates",
   location: "Lisboa, Portugal",
