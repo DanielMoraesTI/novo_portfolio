@@ -22,6 +22,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
+import { HobbyVideo } from "@/components/hobby-video";
 import { CertificationsGrid } from "@/components/certifications-grid";
 import {
   academicEducation,
@@ -310,17 +311,10 @@ export default function Home() {
                 <Card className="gap-0 overflow-hidden py-0">
                   <div className="aspect-video w-full">
                     {hobby.type === "video" ? (
-                      <video
-                        className="h-full w-full object-cover"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        controls
+                      <HobbyVideo
+                        src={hobby.src}
                         title={`Vídeo sobre ${hobby.title}`}
-                      >
-                        <source src={hobby.src} type="video/mp4" />
-                      </video>
+                      />
                     ) : (
                       <iframe
                         className="h-full w-full"

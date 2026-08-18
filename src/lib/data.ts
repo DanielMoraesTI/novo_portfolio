@@ -207,7 +207,7 @@ export const hobbies = [
     title: "Jogos eletrônicos",
     description: "A estratégia de uma boa partida também treina a mente para resolver problemas.",
     type: "video" as const,
-    src: "/assets/videos/d1631b50-c6a7-421a-a732-72d3bc033e6f.mp4",
+    src: "/assets/videos/Sekiro_Madame_Butterfly.mp4",
   },
   {
     title: "Cozinhar",
