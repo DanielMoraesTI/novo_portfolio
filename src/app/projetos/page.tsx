@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
-import { profile, projects } from "@/lib/data";
+import { githubProjects, projects } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Projetos",
@@ -97,31 +97,44 @@ export default function ProjetosPage() {
         ))}
       </div>
 
-      <Reveal
-        delay={0.2}
-        className="mt-14 flex flex-col items-center gap-3 border-t border-border/60 pt-10 text-center"
-      >
-        <p className="text-muted-foreground text-pretty">
-          Há mais projetos e exercícios em desenvolvimento no meu GitHub,
-          nem todos ainda com deploy.
+      <Reveal delay={0.2} className="mt-16 border-t border-border/60 pt-10">
+        <h2 className="font-display text-xl font-semibold tracking-tight">
+          Outros projetos
+        </h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Sem deploy por enquanto, mas com código público e README completo.
         </p>
-        <Button
-          render={<Link href={profile.github} target="_blank" rel="noopener noreferrer" />}
-          nativeButton={false}
-          variant="outline"
-          className="h-11 rounded-full px-6"
-        >
-          <Image
-            src="/assets/icons/github-color-svgrepo-com.svg"
-            alt=""
-            aria-hidden
-            width={16}
-            height={16}
-            data-icon="inline-start"
-            className="dark:invert"
-          />
-          Ver todos no GitHub
-        </Button>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {githubProjects.map((project, i) => (
+            <Reveal key={project.title} delay={i * 0.08}>
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-full flex-col rounded-lg border border-border/60 bg-background p-4 transition hover:-translate-y-0.5 hover:border-primary/50"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-medium">{project.title}</h3>
+                  <Image
+                    src="/assets/icons/github-color-svgrepo-com.svg"
+                    alt=""
+                    aria-hidden
+                    width={16}
+                    height={16}
+                    className="shrink-0 dark:invert"
+                  />
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+                <span className="mt-3 text-sm font-medium text-primary opacity-80 transition group-hover:opacity-100">
+                  Ver código →
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </Reveal>
     </section>
   );

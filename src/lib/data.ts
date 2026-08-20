@@ -247,6 +247,34 @@ export const projects: Project[] = [
   },
 ];
 
+export type GithubProject = {
+  title: string;
+  description: string;
+  github: string;
+};
+
+// Projetos sem deploy — código público, mas sem link para experimentar.
+export const githubProjects: GithubProject[] = [
+  {
+    title: "Chirper",
+    description:
+      "Rede social estilo Twitter feita num curso de Laravel, com estilos próprios e funcionalidades além do que foi ensinado.",
+    github: "https://github.com/DanielMoraesTI/chirper",
+  },
+  {
+    title: "Web Experience",
+    description:
+      "Projeto em HTML, CSS e JavaScript puro, do início do percurso — as primeiras bases de lógica e interface.",
+    github: "https://github.com/DanielMoraesTI/web_experience",
+  },
+  {
+    title: "Imersão Front-End — Alura 2026",
+    description:
+      "Projeto da Imersão Front-End da Alura, praticando componentes e interatividade em contexto real de curso.",
+    github: "https://github.com/DanielMoraesTI/alura-imersao2026-frontend",
+  },
+];
+
 export type Experience = {
   company: string;
   role: string;
