@@ -4,7 +4,7 @@ export const profile = {
   tagline:
     "15+ anos a resolver problemas com as leis. Agora a resolvê-los com código.",
   bio: "Profissional da área jurídica com mais de 15 anos de experiência em contextos públicos e privados, no Brasil e em Portugal, com forte atuação nas áreas administrativa, jurídica (contencioso e preventivo) e de atendimento institucional. Atualmente em transição de carreira para a área de Tecnologia da Informação, com foco em desenvolvimento Frontend, unindo a sólida bagagem analítica e profissional à criação de interfaces eficientes, intuitivas e centradas no usuário.",
-  quote: "Não sou Ateniense nem Grego, mas sim um cidadão do mundo.",
+  quote: "Não sou Ateniense, nem Grego, mas sim um cidadão do mundo.",
   quoteAuthor: "Sócrates",
   location: "Lisboa, Portugal",
   avatar: "/assets/images/rosto_sol.jpeg",
@@ -213,7 +213,37 @@ export const hobbies = [
     title: "Cozinhar",
     description: "Receitas são só algoritmos deliciosos — ordem de passos, precisão e um resultado final.",
     type: "iframe" as const,
-    src: "https://www.youtube.com/embed/CaF_rN98Uw0?si=beXH1FxTCS9hF4yI",
+    src: "https://www.youtube.com/embed/fRV-FWLi33E?si=DEGz5sFMljCGxZ4X",
+  },
+];
+
+export type Project = {
+  title: string;
+  description: string;
+  stack: string[];
+  github: string;
+  demo?: string;
+  featured?: boolean;
+};
+
+export const projects: Project[] = [
+  {
+    title: "Portfólio Pessoal",
+    description:
+      "Este site: apresentação pessoal, trajetória profissional e a transição de carreira do Direito para a Tecnologia.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/DanielMoraesTI/novo_portfolio",
+    demo: "https://danielfm-portfolio.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "Meu Capital — Gestão de Investimentos",
+    description:
+      "Plataforma de gestão de investimentos com autenticação, base de dados (Neon) e funcionalidades de IA.",
+    stack: ["Next.js", "TypeScript", "Neon (Postgres)", "IA"],
+    github: "https://github.com/DanielMoraesTI/finance-investments",
+    demo: "https://meucapitalbr.vercel.app/auth",
+    featured: true,
   },
 ];
 
