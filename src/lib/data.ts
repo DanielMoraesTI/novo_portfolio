@@ -213,7 +213,7 @@ export const hobbies = [
     title: "Cozinhar",
     description: "Receitas são só algoritmos deliciosos — ordem de passos, precisão e um resultado final.",
     type: "iframe" as const,
-    src: "https://www.youtube.com/embed/fRV-FWLi33E?si=DEGz5sFMljCGxZ4X",
+    src: "https://www.youtube.com/embed/Kc154K3BrCs?si=iZeIFK9LbWmSm5aY",
   },
 ];
 

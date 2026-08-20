@@ -27,8 +27,9 @@ export default function ProjetosPage() {
           Projetos
         </h1>
         <p className="mt-4 text-lg text-muted-foreground text-pretty">
-          Cada projeto concluído no curso Frontend vai aparecer aqui, com
-          código aberto e link para experimentar. Estes dois já estão no ar.
+          Aqui vão aparecendo os projetos com que ponho em prática o que vou
+          estudando e aprendendo ao longo dos cursos, com código aberto e
+          link para experimentar. Estes dois já estão no ar.
         </p>
       </Reveal>
 
