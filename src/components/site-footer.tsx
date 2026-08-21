@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { socials } from "@/lib/data";
+import { profile, socials } from "@/lib/data";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-card/40">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-8 text-center sm:px-6">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 py-5 text-center sm:px-6">
         <nav className="flex items-center gap-3">
           {socials.map((social) => (
             <Link
@@ -22,7 +22,7 @@ export function SiteFooter() {
           ))}
         </nav>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} · Feito com Next.js, React e café ☕ por Daniel Moraes
+          © {new Date().getFullYear()} · Feito com Next.js, React e café ☕ por {profile.name}
           <br />
           Curso Frontend, Programa UPskill — Faculdade de Ciências da Universidade de Lisboa
         </p>
