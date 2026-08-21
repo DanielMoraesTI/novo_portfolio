@@ -89,7 +89,11 @@ export function ContactForm() {
 
       <div className="space-y-1.5">
         <Label htmlFor="assunto">Motivo do contacto</Label>
-        <Select value={assunto} onValueChange={(value) => setAssunto(value ?? motivos[0])}>
+        <Select
+          name="assunto"
+          value={assunto}
+          onValueChange={(value) => setAssunto(value ?? motivos[0])}
+        >
           <SelectTrigger id="assunto" className="w-full">
             <SelectValue />
           </SelectTrigger>
