@@ -22,28 +22,61 @@ const motivos = [
   "Outro assunto",
 ];
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
 export function ContactForm() {
   const [assunto, setAssunto] = useState(motivos[0]);
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!FORMSPREE_ENDPOINT) {
+      toast.error("Formulário indisponível", {
+        description: "O envio ainda não está configurado. Tente pelo e-mail ou LinkedIn.",
+      });
+      return;
+    }
+
+    const form = event.currentTarget;
     setLoading(true);
 
-    // Simula o envio — este portfólio ainda não tem backend ligado.
-    setTimeout(() => {
-      setLoading(false);
-      event.currentTarget.reset();
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Falha no envio");
+
+      form.reset();
       setAssunto(motivos[0]);
       toast.success("Mensagem recebida! 🎉", {
         description:
           "Obrigado pelo contacto — respondo assim que possível. Tenha um ótimo dia!",
       });
-    }, 700);
+    } catch {
+      toast.error("Não foi possível enviar", {
+        description: "Tente novamente ou contacte-me por e-mail ou LinkedIn.",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot antispam: campo invisível para humanos, bots costumam preencher. */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
       <div className="space-y-1.5">
         <Label htmlFor="nome">Nome</Label>
         <Input id="nome" name="nome" placeholder="O seu nome" required />
