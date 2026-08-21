@@ -32,7 +32,6 @@ import {
   highlights,
   hobbies,
   profile,
-  studyTopics,
   techEducation,
 } from "@/lib/data";
 
@@ -268,24 +267,6 @@ export default function Home() {
               </Card>
             </Reveal>
           </div>
-
-          <Reveal
-            delay={0.15}
-            className="mt-14 flex flex-wrap items-center justify-center gap-3 border-t border-border/60 pt-8"
-          >
-            <span className="text-sm text-muted-foreground">Bases sólidas:</span>
-            {studyTopics.map((topic) => (
-              <Link
-                key={topic.title}
-                href={topic.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-border/60 bg-background px-3 py-1.5 text-sm font-medium transition hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
-              >
-                {topic.title}
-              </Link>
-            ))}
-          </Reveal>
         </div>
       </section>
 

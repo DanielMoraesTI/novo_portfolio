@@ -181,27 +181,6 @@ export const certifications: CertificationGroup[] = [
   },
 ];
 
-export const studyTopics = [
-  {
-    title: "HTML",
-    description: "Estrutura semântica e acessível para a web.",
-    href: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
-    image: "/assets/images/html.png",
-  },
-  {
-    title: "JavaScript",
-    description: "Lógica, interatividade e programação orientada a eventos.",
-    href: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/What_is_JavaScript",
-    image: "/assets/images/javascript.png",
-  },
-  {
-    title: "CSS",
-    description: "Design responsivo, layout e identidade visual.",
-    href: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content",
-    image: "/assets/images/css.png",
-  },
-];
-
 export const hobbies = [
   {
     title: "Jogos eletrônicos",

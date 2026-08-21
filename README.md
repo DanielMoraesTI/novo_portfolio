@@ -16,6 +16,7 @@ Construído com **Next.js (App Router)**, **React**, **TypeScript**,
 - [motion](https://motion.dev/) — animações
 - [next-themes](https://github.com/pacocoursey/next-themes) — modo claro/escuro
 - [sonner](https://sonner.emilkowal.ski/) — notificações
+- [Formspree](https://formspree.io/) — envio do formulário de contacto
 
 ## Estrutura
 
@@ -24,15 +25,15 @@ src/
   app/
     page.tsx            → Início (hero, sobre, formação, hobbies)
     experiencia/         → Experiências profissionais (timeline)
-    projetos/             → Projetos (em construção)
-    contacto/             → Formulário e canais de contacto
+    projetos/             → Projetos em destaque (com deploy) + outros no GitHub
+    contacto/             → Formulário (Formspree) e canais de contacto
     layout.tsx           → Layout raiz (header, footer, tema, fontes)
     globals.css           → Tokens de design / tema
   components/
     ui/                    → Componentes shadcn/ui
     site-header.tsx        → Cabeçalho + navegação (com menu mobile)
     site-footer.tsx        → Rodapé + redes sociais
-    contact-form.tsx       → Formulário de contacto
+    contact-form.tsx       → Formulário de contacto (ligado ao Formspree)
     reveal.tsx              → Wrapper de animação de entrada
   lib/
     data.ts                 → Todo o conteúdo do site (fácil de editar)
@@ -43,6 +44,19 @@ public/
 Todo o conteúdo textual (experiências, formação, links) está centralizado
 em [`src/lib/data.ts`](src/lib/data.ts) — basta editar esse ficheiro para
 atualizar o site.
+
+## Variáveis de ambiente
+
+Copiar [`.env.example`](.env.example) para `.env.local` e preencher:
+
+```bash
+NEXT_PUBLIC_FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx
+```
+
+Endpoint gerado ao criar um formulário em [formspree.io](https://formspree.io/).
+Sem esta variável, o formulário de contacto mostra um erro amigável em vez
+de enviar. Em produção (Vercel), configurar a mesma variável em
+Project Settings → Environment Variables.
 
 ## Desenvolvimento
 
@@ -62,5 +76,8 @@ npm run lint          # eslint
 
 ---
 
-© 2025–2026 Daniel Moraes · Curso Frontend, Programa UPskill — Faculdade
-de Ciências da Universidade de Lisboa.
+© 2025–2026 Daniel Moraes · Projeto pessoal construído ao longo da
+transição de carreira para tecnologia, combinando o aprendizado do
+curso Frontend do Programa UPskill (Faculdade de Ciências da
+Universidade de Lisboa) com trilhas da Alura — usado como espaço
+próprio para testar conhecimentos, estruturas, serviços e layouts.
