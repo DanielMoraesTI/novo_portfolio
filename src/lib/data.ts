@@ -360,11 +360,6 @@ export const socials = [
     href: `mailto:${profile.email}`,
     icon: "/assets/icons/mail-svgrepo-com.svg",
   },
-  {
-    label: "WhatsApp",
-    href: "/contacto",
-    icon: "/assets/icons/whatsapp-svgrepo-com.svg",
-  },
 ];
 
 export const navLinks = [

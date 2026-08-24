@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <Reveal>
           <h1 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Quer falar comigo?
@@ -26,24 +26,23 @@ export default function ContactoPage() {
             formulário ao lado — respondo o mais rápido possível.
           </p>
 
-          <ul className="mt-8 space-y-3">
-            {socials.map((social) => (
-              <li key={social.label}>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {socials.map((social, i) => (
+              <li
+                key={social.label}
+                className={i === socials.length - 1 && socials.length % 2 !== 0 ? "sm:col-span-2" : undefined}
+              >
                 <Link
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="group flex items-center gap-3 rounded-xl border border-border/60 bg-card px-4 py-3 transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md"
                 >
-                  <span className="flex size-9 items-center justify-center rounded-full bg-muted">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
                     <Image src={social.icon} alt="" aria-hidden width={18} height={18} />
                   </span>
-                  <span className="text-sm font-medium">
-                    {social.label === "WhatsApp"
-                      ? "WhatsApp — disponível mediante pedido"
-                      : social.label === "E-mail"
-                        ? profile.email
-                        : social.label}
+                  <span className="truncate text-sm font-medium">
+                    {social.label === "E-mail" ? profile.email : social.label}
                   </span>
                 </Link>
               </li>
