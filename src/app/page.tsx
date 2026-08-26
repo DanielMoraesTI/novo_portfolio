@@ -164,6 +164,12 @@ export default function Home() {
                       <CardDescription>{item.place}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-wrap items-center gap-2">
+                      {"completed" in item && item.completed && (
+                        <Badge className="gap-1 bg-success text-success-foreground">
+                          <CheckCircle2 className="size-3" />
+                          Concluído
+                        </Badge>
+                      )}
                       <Badge variant="outline">{item.period}</Badge>
                       {item.note && <Badge variant="secondary">{item.note}</Badge>}
                     </CardContent>

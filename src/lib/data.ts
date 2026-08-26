@@ -26,14 +26,16 @@ export const academicEducation = [
     title: "Bacharelado em Direito",
     place: "Universidade Salgado de Oliveira",
     period: "2003 — 2007",
+    completed: true,
   },
   {
     title: "Pós-graduação em Direito Processual Civil",
     place: "Universidade Unianhanguera — Uniderp",
     period: "2010 — 2012",
+    completed: true,
   },
   {
-    title: "Engenharia Elétrica, Eletrónica e Comunicações",
+    title: "Engenharia Elétrica",
     place: "Universidade Federal de Goiás (UFG)",
     period: "2001 — 2002",
     note: "Não concluído",
