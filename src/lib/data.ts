@@ -196,6 +196,12 @@ export const hobbies = [
     type: "iframe" as const,
     src: "https://www.youtube.com/embed/Kc154K3BrCs?si=iZeIFK9LbWmSm5aY",
   },
+  {
+    title: "Investimentos",
+    description: "Números, análises e planeamento — programo hoje a independência financeira de amanhã.",
+    type: "iframe" as const,
+    src: "https://www.youtube.com/embed/cqeFQgbagmE?si=XPg8ncPnGONUitWp",
+  },
 ];
 
 export type Project = {

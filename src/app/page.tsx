@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   Award,
   ArrowRight,
-  Briefcase,
   Building2,
   CheckCircle2,
   GraduationCap,
@@ -22,7 +21,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
-import { HobbyVideo } from "@/components/hobby-video";
+import { HobbiesCarousel } from "@/components/hobbies-carousel";
 import { CertificationsGrid } from "@/components/certifications-grid";
 import {
   academicEducation,
@@ -292,37 +291,9 @@ export default function Home() {
           <p className="-mt-8 mb-10 text-center text-muted-foreground">
             Também sou gente — eis os meus hobbies.
           </p>
-          <div className="grid gap-8 md:grid-cols-2">
-            {hobbies.map((hobby, i) => (
-              <Reveal key={hobby.title} delay={i * 0.1}>
-                <Card className="gap-0 overflow-hidden py-0">
-                  <div className="aspect-video w-full">
-                    {hobby.type === "video" ? (
-                      <HobbyVideo
-                        src={hobby.src}
-                        title={`Vídeo sobre ${hobby.title}`}
-                      />
-                    ) : (
-                      <iframe
-                        className="h-full w-full"
-                        src={hobby.src}
-                        title={`Vídeo do YouTube sobre ${hobby.title}`}
-                        loading="lazy"
-                        allowFullScreen
-                      />
-                    )}
-                  </div>
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-2">
-                      <Briefcase className="size-4 text-accent" />
-                      <h3 className="font-semibold">{hobby.title}</h3>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{hobby.description}</p>
-                  </CardContent>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.1}>
+            <HobbiesCarousel hobbies={hobbies} />
+          </Reveal>
         </div>
       </section>
     </>
