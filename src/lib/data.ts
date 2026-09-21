@@ -65,7 +65,7 @@ export const currentActivity = {
   kind: "Estágio",
   title: "Estágio em Desenvolvimento Frontend",
   place: "Faculdade de Ciências da Universidade de Lisboa",
-  period: "13 Jul 2026 — 13 Out 2026",
+  period: "13 Jul 2026 — 12 Out 2026",
   description:
     "Depois de concluir a parte teórica do Programa UPskill, a pôr tudo em prática: 3 meses de estágio na área de TI Frontend, em contexto real de equipa técnica.",
 };
