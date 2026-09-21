@@ -135,9 +135,10 @@ export const certifications: CertificationGroup[] = [
   {
     title: "Imersões Práticas",
     provider: "Alura",
-    count: 5,
-    description: "Front-end, Front-end com IA, Back-end, Dados com Python e IA.",
+    count: 6,
+    description: "Arquitetura Web com IA, Front-end, Front-end com IA, Back-end, Dados com Python e IA.",
     courses: [
+      { title: "Imersão Arquitetura Web com IA", date: "Jul 2026" },
       { title: "Imersão IA", date: "Jun 2026" },
       { title: "Imersão Front-End com IA", date: "Jun 2026" },
       { title: "Imersão Dados com Python", date: "Ago 2025" },
