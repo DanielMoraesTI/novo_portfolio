@@ -190,18 +190,21 @@ export const hobbies = [
     description: "Números, análises e planeamento — programo hoje a independência financeira de amanhã.",
     type: "iframe" as const,
     src: "https://www.youtube.com/embed/cqeFQgbagmE?si=XPg8ncPnGONUitWp",
+    icon: "trending-up" as const,
   },
   {
     title: "Jogos eletrônicos",
     description: "A estratégia de uma boa partida também treina a mente para resolver problemas.",
     type: "video" as const,
     src: "/assets/videos/Sekiro_Madame_Butterfly.mp4",
+    icon: "gamepad" as const,
   },
   {
     title: "Cozinhar",
     description: "Receitas são só algoritmos deliciosos — ordem de passos, precisão e um resultado final.",
     type: "iframe" as const,
     src: "https://www.youtube.com/embed/Kc154K3BrCs?si=iZeIFK9LbWmSm5aY",
+    icon: "chef-hat" as const,
   },
 ];
 

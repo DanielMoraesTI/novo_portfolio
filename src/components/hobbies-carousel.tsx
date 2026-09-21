@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Briefcase, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChefHat, ChevronLeft, ChevronRight, Gamepad2, TrendingUp } from "lucide-react";
 import { HobbyVideo } from "@/components/hobby-video";
 
 type Hobby = {
@@ -10,6 +10,13 @@ type Hobby = {
   description: string;
   type: "video" | "iframe";
   src: string;
+  icon: "trending-up" | "gamepad" | "chef-hat";
+};
+
+const hobbyIcons = {
+  "trending-up": TrendingUp,
+  gamepad: Gamepad2,
+  "chef-hat": ChefHat,
 };
 
 export function HobbiesCarousel({ hobbies }: { hobbies: Hobby[] }) {
@@ -18,6 +25,7 @@ export function HobbiesCarousel({ hobbies }: { hobbies: Hobby[] }) {
   const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
   const n = hobbies.length;
   const hobby = hobbies[index];
+  const HobbyIcon = hobbyIcons[hobby.icon];
 
   useEffect(() => {
     const el = cardRef.current;
@@ -119,7 +127,7 @@ export function HobbiesCarousel({ hobbies }: { hobbies: Hobby[] }) {
             transition={{ duration: 0.25 }}
           >
             <div className="flex items-center justify-center gap-2">
-              <Briefcase className="size-4 text-accent" />
+              <HobbyIcon className="size-4 text-accent" />
               <h3 className="font-semibold">{hobby.title}</h3>
             </div>
             <p className="mt-1 text-sm text-muted-foreground">{hobby.description}</p>

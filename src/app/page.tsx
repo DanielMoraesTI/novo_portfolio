@@ -6,7 +6,6 @@ import {
   Building2,
   CheckCircle2,
   GraduationCap,
-  Heart,
   MapPin,
   Quote,
   Sparkle,
@@ -283,7 +282,6 @@ export default function Home() {
         />
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal className="mb-10 flex items-center justify-center gap-2 text-center">
-            <Heart className="size-6 text-primary" />
             <h2 className="font-display text-3xl font-bold tracking-tight">
               Fora do código e dos tribunais
             </h2>
