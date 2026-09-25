@@ -13,8 +13,17 @@ export const metadata: Metadata = {
   description: "Projetos de Daniel Moraes — em desenvolvimento e com deploy no Vercel.",
 };
 
+const numeroPorExtenso: Record<number, string> = {
+  1: "Este",
+  2: "Estes dois",
+  3: "Estes três",
+  4: "Estes quatro",
+  5: "Estes cinco",
+};
+
 export default function ProjetosPage() {
   const featured = projects.filter((project) => project.featured);
+  const contagemFeatured = numeroPorExtenso[featured.length] ?? `Estes ${featured.length}`;
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
@@ -29,7 +38,7 @@ export default function ProjetosPage() {
         <p className="mt-4 text-lg text-muted-foreground text-pretty">
           Aqui vão aparecendo os projetos com que ponho em prática o que vou
           estudando e aprendendo ao longo dos cursos, com código aberto e
-          link para experimentar. Estes dois já estão no ar.
+          link para experimentar. {contagemFeatured} já {featured.length === 1 ? "está" : "estão"} no ar.
         </p>
       </Reveal>
 

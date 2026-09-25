@@ -236,6 +236,15 @@ export const projects: Project[] = [
     demo: "https://meucapitalbr.vercel.app/auth",
     featured: true,
   },
+  {
+    title: "GameVault — Catálogo de Jogos",
+    description:
+      "Catálogo pessoal de jogos com autenticação, dashboard de estatísticas e exportação de dados em CSV, XLSX e PDF.",
+    stack: ["Next.js", "TypeScript", "Neon (Postgres)", "Auth.js"],
+    github: "https://github.com/DanielMoraesTI/lista_jogos",
+    demo: "https://listajogos.vercel.app",
+    featured: true,
+  },
 ];
 
 export type GithubProject = {
