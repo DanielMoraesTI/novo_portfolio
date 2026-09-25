@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
@@ -21,17 +22,13 @@ export default function ContactoPage() {
             Quer falar comigo?
           </h1>
           <p className="mt-4 text-muted-foreground text-pretty">
-            Tem uma dúvida sobre transição de carreira, sobre as matérias que
-            tenho estudado, ou apenas quer trocar uma ideia? Preencha o
-            formulário ao lado — respondo o mais rápido possível.
+            Escolha o tema no formulário ao lado e prepare-me para responder
+            melhor — respondo o mais rápido possível.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {socials.map((social, i) => (
-              <li
-                key={social.label}
-                className={i === socials.length - 1 && socials.length % 2 !== 0 ? "sm:col-span-2" : undefined}
-              >
+          <ul className="mt-8 space-y-3">
+            {socials.map((social) => (
+              <li key={social.label}>
                 <Link
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
@@ -42,6 +39,7 @@ export default function ContactoPage() {
                     <Image src={social.icon} alt="" aria-hidden width={18} height={18} />
                   </span>
                   <span className="truncate text-sm font-medium">{social.label}</span>
+                  <ArrowUpRight className="ml-auto size-4 text-muted-foreground transition group-hover:text-primary" />
                 </Link>
               </li>
             ))}
