@@ -45,11 +45,28 @@ export default function ProjetosPage() {
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
         {featured.map((project, i) => (
           <Reveal key={project.title} delay={i * 0.1}>
-            <Card className="h-full">
-              <CardHeader>
+            <Card className="h-full gap-0 overflow-hidden py-0">
+              {project.image && (
+                <div className="relative aspect-video w-full">
+                  <Image
+                    src={project.image}
+                    alt={`Screenshot do projeto ${project.title}`}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  {project.demo && (
+                    <Badge className="absolute top-3 left-3 gap-1 bg-success text-success-foreground">
+                      <span className="size-1.5 rounded-full bg-current" />
+                      No ar
+                    </Badge>
+                  )}
+                </div>
+              )}
+              <CardHeader className="pt-5">
                 <CardTitle>{project.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex h-full flex-col gap-4">
+              <CardContent className="flex h-full flex-col gap-4 pb-5">
                 <p className="text-sm text-muted-foreground">
                   {project.description}
                 </p>

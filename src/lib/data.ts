@@ -215,6 +215,7 @@ export type Project = {
   github: string;
   demo?: string;
   featured?: boolean;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -226,6 +227,7 @@ export const projects: Project[] = [
     github: "https://github.com/DanielMoraesTI/novo_portfolio",
     demo: "https://danielfm-portfolio.vercel.app/",
     featured: true,
+    image: "/assets/images/projects/portfolio.webp",
   },
   {
     title: "Meu Capital — Gestão de Investimentos",
@@ -235,6 +237,7 @@ export const projects: Project[] = [
     github: "https://github.com/DanielMoraesTI/finance-investments",
     demo: "https://meucapitalbr.vercel.app/auth",
     featured: true,
+    image: "/assets/images/projects/meu-capital.webp",
   },
   {
     title: "GameVault — Catálogo de Jogos",
@@ -244,6 +247,7 @@ export const projects: Project[] = [
     github: "https://github.com/DanielMoraesTI/lista_jogos",
     demo: "https://listajogos.vercel.app",
     featured: true,
+    image: "/assets/images/projects/gamevault.webp",
   },
 ];
 
