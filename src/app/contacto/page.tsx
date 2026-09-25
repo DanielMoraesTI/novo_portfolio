@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
-import { profile, socials } from "@/lib/data";
+import { socials } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contactos",
@@ -41,9 +41,7 @@ export default function ContactoPage() {
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
                     <Image src={social.icon} alt="" aria-hidden width={18} height={18} />
                   </span>
-                  <span className="truncate text-sm font-medium">
-                    {social.label === "E-mail" ? profile.email : social.label}
-                  </span>
+                  <span className="truncate text-sm font-medium">{social.label}</span>
                 </Link>
               </li>
             ))}
