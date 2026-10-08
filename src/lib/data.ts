@@ -8,7 +8,7 @@ export const profile = {
   quoteAuthor: "Sócrates",
   location: "Lisboa, Portugal",
   avatar: "/assets/images/rosto_sol.jpeg",
-  email: "adv.danielfm@gmail.com",
+  email: "ti.danielmoraes@gmail.com",
   linkedin:
     "https://www.linkedin.com/in/daniel-fernandes-de-moraes-8118b3204",
   github: "https://github.com/DanielMoraesTI",
