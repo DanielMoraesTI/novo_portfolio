@@ -26,9 +26,9 @@ Portfólio pessoal que apresenta a minha trajetória de transição de carreira 
 
 | Área | O que tem |
 | --- | --- |
-| **Início** | Hero com destaques numéricos, sobre mim, formação académica e técnica com estado de conclusão, certificações agrupadas com modal de detalhes, atividade atual (estágio) e hobbies |
+| **Início** | Hero com destaques numéricos, sobre mim, formação académica e técnica com estado de conclusão, formação UPskill em destaque com modal dos módulos, certificações agrupadas com modal de detalhes e hobbies |
 | **Hobbies** | Carrossel *coverflow* próprio — cards vizinhos desfocados em profundidade, setas e indicadores, ícone por tema, vídeos que só tocam quando visíveis |
-| **Experiência** | Timeline do percurso profissional (Brasil e Portugal) |
+| **Experiência** | Timeline do percurso profissional (Brasil e Portugal), incluindo o estágio em desenvolvimento Frontend na Faculdade de Ciências da Universidade de Lisboa |
 | **Projetos** | Destaques com screenshot, selo "No ar", stack e links de demo/código, mais uma secção de projetos só no GitHub |
 | **Contacto** | Formulário funcional com seleção de tema em cards, validação, proteção antispam e feedback por toast |
 | **Global** | Modo claro/escuro automático ou manual, layout responsivo do mobile ao desktop, animações de entrada, favicon e ícone Apple personalizados |

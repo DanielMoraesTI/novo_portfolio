@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   Award,
   ArrowRight,
-  Building2,
   CheckCircle2,
   GraduationCap,
   MapPin,
@@ -26,22 +25,11 @@ import {
   academicEducation,
   certifications,
   completedProgram,
-  currentActivity,
   highlights,
   hobbies,
   profile,
   techEducation,
 } from "@/lib/data";
-
-const formacaoTecnologia = [
-  {
-    title: completedProgram.title,
-    place: completedProgram.place,
-    period: completedProgram.period,
-    completed: true,
-  },
-  ...techEducation,
-];
 
 export default function Home() {
   return (
@@ -182,7 +170,7 @@ export default function Home() {
               Tecnologia e Cursos Complementares
             </h3>
             <ol className="space-y-4">
-              {formacaoTecnologia.map((item) => (
+              {techEducation.map((item) => (
                 <li key={item.title}>
                   <Card>
                     <CardHeader>
@@ -190,12 +178,6 @@ export default function Home() {
                       <CardDescription>{item.place}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-wrap items-center gap-2">
-                      {"completed" in item && item.completed && (
-                        <Badge className="gap-1 bg-success text-success-foreground">
-                          <CheckCircle2 className="size-3" />
-                          Concluído
-                        </Badge>
-                      )}
                       <Badge variant="outline">{item.period}</Badge>
                     </CardContent>
                   </Card>
@@ -215,62 +197,7 @@ export default function Home() {
               Cursos e Certificações
             </h2>
           </Reveal>
-          <CertificationsGrid certifications={certifications} />
-        </div>
-      </section>
-
-      {/* A ACONTECER AGORA */}
-      <section className="border-t border-border/60 bg-card/40">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <Reveal>
-              <Badge className="gap-1.5 bg-success text-success-foreground">
-                <span className="relative flex size-1.5">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-success-foreground/70" />
-                  <span className="relative inline-flex size-1.5 rounded-full bg-success-foreground" />
-                </span>
-                {currentActivity.kind} em curso
-              </Badge>
-              <h2 className="font-display mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                {currentActivity.title}
-              </h2>
-              <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-foreground/80">
-                <Building2 className="size-4 text-primary" />
-                {currentActivity.place}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">{currentActivity.period}</p>
-              <p className="mt-4 text-muted-foreground text-pretty">
-                {currentActivity.description}
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle2 className="size-5 text-success" />
-                    {completedProgram.title}
-                  </CardTitle>
-                  <CardDescription>
-                    {completedProgram.place} · {completedProgram.period}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ol className="space-y-2.5">
-                    {completedProgram.modules.map((module, i) => (
-                      <li key={module} className="flex items-start gap-2.5 text-sm">
-                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" />
-                        <span>
-                          <span className="text-muted-foreground">M{i + 1} · </span>
-                          {module}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
-                </CardContent>
-              </Card>
-            </Reveal>
-          </div>
+          <CertificationsGrid certifications={certifications} featured={completedProgram} />
         </div>
       </section>
 

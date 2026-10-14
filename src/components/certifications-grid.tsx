@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, GraduationCap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -14,9 +14,87 @@ import {
 import { Reveal } from "@/components/reveal";
 import type { CertificationGroup } from "@/lib/data";
 
-export function CertificationsGrid({ certifications }: { certifications: CertificationGroup[] }) {
+type FeaturedProgram = {
+  title: string;
+  provider: string;
+  place: string;
+  period: string;
+  description: string;
+  modules: string[];
+};
+
+function FeaturedProgramCard({ program }: { program: FeaturedProgram }) {
+  return (
+    <Reveal className="sm:col-span-2 lg:col-span-3">
+      <Dialog>
+        <DialogTrigger
+          render={<button type="button" className="block h-full w-full text-left" />}
+        >
+          <Card className="relative h-full cursor-pointer overflow-hidden ring-2 ring-primary/40 transition-all hover:-translate-y-1 hover:shadow-lg hover:ring-primary/70">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,color-mix(in_oklch,var(--primary),transparent_88%),transparent_60%)]"
+            />
+            <CardHeader className="relative">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge className="gap-1 bg-primary text-primary-foreground">
+                  <GraduationCap className="size-3" />
+                  Formação em destaque
+                </Badge>
+                <Badge className="gap-1 bg-success text-success-foreground">
+                  <CheckCircle2 className="size-3" />
+                  Concluído
+                </Badge>
+                <Badge variant="outline">{program.period}</Badge>
+              </div>
+              <CardTitle className="pt-2 text-xl">{program.title}</CardTitle>
+              <CardDescription>
+                {program.provider} · {program.place}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="relative flex flex-wrap items-end justify-between gap-3">
+              <p className="max-w-2xl text-sm text-muted-foreground">{program.description}</p>
+              <span className="flex items-center gap-1 text-sm font-medium text-primary">
+                Ver os {program.modules.length} módulos
+                <ArrowUpRight className="size-4" />
+              </span>
+            </CardContent>
+          </Card>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-lg">{program.title}</DialogTitle>
+            <DialogDescription>
+              {program.provider} · {program.period}
+            </DialogDescription>
+          </DialogHeader>
+          <ol className="max-h-96 space-y-3 overflow-y-auto pr-1">
+            {program.modules.map((module, i) => (
+              <li key={module} className="flex items-start gap-2.5 text-sm">
+                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-success" />
+                <span>
+                  <span className="text-muted-foreground">M{i + 1} · </span>
+                  {module}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </DialogContent>
+      </Dialog>
+    </Reveal>
+  );
+}
+
+export function CertificationsGrid({
+  certifications,
+  featured,
+}: {
+  certifications: CertificationGroup[];
+  featured?: FeaturedProgram;
+}) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {featured && <FeaturedProgramCard program={featured} />}
       {certifications.map((cert, i) => (
         <Reveal key={cert.title} delay={i * 0.05}>
           <Dialog>

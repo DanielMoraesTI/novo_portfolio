@@ -60,21 +60,14 @@ export const techEducation = [
   },
 ];
 
-// O que está a acontecer agora — em destaque na homepage.
-export const currentActivity = {
-  kind: "Estágio",
-  title: "Estágio em Desenvolvimento Frontend",
-  place: "Faculdade de Ciências da Universidade de Lisboa",
-  period: "13 Jul 2026 — 12 Out 2026",
-  description:
-    "Depois de concluir a parte teórica do Programa UPskill, a pôr tudo em prática: 3 meses de estágio na área de TI Frontend, em contexto real de equipa técnica.",
-};
-
-// Programa concluído que originou o estágio acima.
+// Programa em destaque na secção Cursos e Certificações (o modal lista os módulos).
 export const completedProgram = {
   title: "Frontend JavaScript + IA",
-  place: "Programa UPskill — Digital Skills & Jobs · Faculdade de Ciências da Universidade de Lisboa",
+  provider: "Programa UPskill — Digital Skills & Jobs",
+  place: "Faculdade de Ciências da Universidade de Lisboa",
   period: "Nov 2025 — Jul 2026",
+  description:
+    "Formação intensiva de 8 módulos, do básico da computação ao Projeto Final, que deu acesso ao estágio em desenvolvimento Frontend.",
   modules: [
     "Fundamentos da Computação e Introdução à Programação",
     "Fundamentos de Programação Web",
@@ -87,7 +80,8 @@ export const completedProgram = {
   ],
 };
 
-// Próximo curso a começar — adicionar dados quando arrancar.
+// Próximo curso — ainda não iniciado e sem uso na página. Quando começar,
+// preencher período/descrição e criar o bloco correspondente na homepage.
 export const upcomingCourse = {
   title: "Carreira",
   place: "Alura",
@@ -289,6 +283,18 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
+  {
+    company: "Faculdade de Ciências da Universidade de Lisboa",
+    role: "Estágio em Desenvolvimento Frontend",
+    location: "Lisboa, Portugal",
+    period: "Jul 2026 — Out 2026",
+    points: [
+      "Integrei a equipa responsável pela nova identidade visual dos sites internos da Faculdade.",
+      "Desenvolvimento, em Vue e PHP, de uma biblioteca de componentes reutilizáveis, publicada no GitLab para uso nas páginas a implementar.",
+      "Implementação da nova identidade visual, em ambiente de qualidade, nas páginas Balcão C, Gremius, Biblius, Rasmus, Census, Accessus e Forgot Password.",
+      "Estágio de 3 meses do Programa UPskill, em contexto real de equipa técnica.",
+    ],
+  },
   {
     company: "NOS (RH+) e MEO",
     role: "Gestor de Cliente Corporate | Gestor Comercial",
