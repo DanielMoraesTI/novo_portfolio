@@ -38,12 +38,12 @@ export default function ExperienciaPage() {
           <li key={exp.company} className="relative">
             <span
               className={`absolute top-1.5 -left-[calc(1.5rem+5px)] size-2.5 rounded-full ring-4 ring-background sm:-left-[calc(2rem+5px)] ${
-                exp.current ? "bg-success" : "bg-primary/60"
+                exp.highlight ? "bg-success" : "bg-primary/60"
               }`}
               aria-hidden
             />
             <Reveal delay={Math.min(i * 0.06, 0.3)}>
-              <Card className={exp.current ? "ring-2 ring-success/60" : undefined}>
+              <Card className={exp.highlight ? "ring-2 ring-success/60" : undefined}>
                 <CardHeader>
                   <div className="flex flex-wrap items-center gap-2">
                     <CardTitle className="text-lg">{exp.company}</CardTitle>

@@ -129,9 +129,10 @@ export const certifications: CertificationGroup[] = [
   {
     title: "Imersões Práticas",
     provider: "Alura",
-    count: 6,
-    description: "Arquitetura Web com IA, Front-end, Front-end com IA, Back-end, Dados com Python e IA.",
+    count: 7,
+    description: "Engenharia de Software com IA, Arquitetura Web com IA, Front-end, Front-end com IA, Back-end, Dados com Python e IA.",
     courses: [
+      { title: "Imersão Engenharia de Software: Dev na Era da IA", date: "Nov 2026" },
       { title: "Imersão Arquitetura Web com IA", date: "Jul 2026" },
       { title: "Imersão IA", date: "Jun 2026" },
       { title: "Imersão Front-End com IA", date: "Jun 2026" },
@@ -279,6 +280,7 @@ export type Experience = {
   location: string;
   period: string;
   current?: boolean;
+  highlight?: boolean;
   points: string[];
 };
 
@@ -288,6 +290,7 @@ export const experiences: Experience[] = [
     role: "Estágio em Desenvolvimento Frontend",
     location: "Lisboa, Portugal",
     period: "Jul 2026 — Out 2026",
+    highlight: true,
     points: [
       "Integrei a equipa responsável pela nova identidade visual dos sites internos da Faculdade.",
       "Desenvolvimento, em Vue e PHP, de uma biblioteca de componentes reutilizáveis, publicada no GitLab para uso nas páginas a implementar.",
